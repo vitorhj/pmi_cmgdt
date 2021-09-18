@@ -5,9 +5,9 @@
 
 import pandas as pd
 import os
+!pip install folium
 import folium
 import re
-!pip install geopandas
 import geopandas as gpd
 import streamlit as st
 
