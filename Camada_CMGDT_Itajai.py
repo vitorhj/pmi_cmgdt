@@ -15,7 +15,7 @@ import streamlit as st
 
 ##ESTRUTURA PAGINA
 
-st.text('teste')
+st.text('teste 123')
 #import pandas as pd
 #tabela_deliberacoes = pd.read_excel(os.path.join(folder,'Deliberações CMGDT.xlsx'))
 #tabela_deliberacoes.head()
