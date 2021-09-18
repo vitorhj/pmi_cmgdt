@@ -5,8 +5,7 @@
 
 import pandas as pd
 import os
-!pip install folium
-import folium
+#import folium
 import re
 import geopandas as gpd
 import streamlit as st
