@@ -7,7 +7,7 @@ import pandas as pd
 import os
 #import folium
 import re
-import geopandas as gpd
+#import geopandas as gpd
 import streamlit as st
 
 
@@ -16,8 +16,8 @@ import streamlit as st
 ##ESTRUTURA PAGINA
 
 st.text('teste 123')
-#import pandas as pd
-#tabela_deliberacoes = pd.read_excel(os.path.join(folder,'Deliberações CMGDT.xlsx'))
+import pandas as pd
+tabela_deliberacoes = pd.read_excel(os.path.join(folder,'Deliberações CMGDT.xlsx'))
 #tabela_deliberacoes.head()
 #import pandas as pd
 #latlong =pd.read_csv(os.path.join(folder,'plantacadastral','viewplantacadastral_pontos.csv'))
