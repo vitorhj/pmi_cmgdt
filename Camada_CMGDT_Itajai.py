@@ -18,7 +18,7 @@ import streamlit as st
 st.text('teste 1234')
 import pandas as pd
 tabela_deliberacoes = pd.read_csv('Deliberações CMGDT.csv')
-st.DataFrame(tabela_deliberacoes)
+#st.DataFrame(tabela_deliberacoes)
 #import pandas as pd
 #latlong =pd.read_csv(os.path.join(folder,'plantacadastral','viewplantacadastral_pontos.csv'))
 #latlong.head()
