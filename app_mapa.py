@@ -17,6 +17,9 @@ ultima_linha=len(nova_tabela)
 ##Limpa valores de latitude e longitude em branco do mapa (estava dando erro!)
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
+cmgdt=pd.read_csv('CMGDT.csv')
+deliberacoes=cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
+st.text(deliberacoes)
 
 ultima_linha = len(nova_tabela)
 
