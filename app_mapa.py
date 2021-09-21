@@ -94,6 +94,6 @@ st.text(lista_prot)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
-#prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
 ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
