@@ -8,22 +8,7 @@ import pandas as pd
 import geopandas as gpd
 
 #______________________________________________________________________________________________________________________________________________________
-##ESTRUTURA DA PÁGINA
-
-st.set_page_config(layout="wide")
-
-# # center on Liberty Bell
-# m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-
-# # add marker for Liberty Bell
-# tooltip = "Liberty Bell"
-# folium.Marker(
-    # [39.949610, -75.150282], popup="Liberty Bell", tooltip=tooltip
-# ).add_to(m)
-
-# # call to render Folium map in Streamlit
-# folium_static(m)
-
+##CÓDIGO
 
 nova_tabela=pd.read_csv('nova_tabela.csv')
 latlong =pd.read_csv('viewplantacadastral_pontos.csv')
@@ -89,4 +74,22 @@ for i in range(ultima_linha):
 m.add_child(folium.LayerControl())
 #m.save(outfile=os.path.join(folder,'map.html'))
 
+
+#______________________________________________________________________________________________________________________________________________________
+##ESTRUTURA DA PÁGINA
+
+##Padrão de visualização da página
+st.set_page_config(layout="wide")
+
+##Título acima do mapa
+st.title('Mapa de deliberações do CMGDT')
+
+##Mapa com as deliberações CMGDT
 folium_static(m)
+
+##Sidebar e filtros
+st.sidebar.subheader('Filtros:')
+lista_prot = ('','op1','op2','op3')
+prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
+ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
