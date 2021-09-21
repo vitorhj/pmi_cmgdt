@@ -85,7 +85,7 @@ st.set_page_config(layout="wide")
 st.title('Mapa de deliberações do CMGDT')
 
 ##Mapa com as deliberações CMGDT
-folium_static(m)
+folium_static(m, width=1150, height=550)
 
 #Tabela com deliberações
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
