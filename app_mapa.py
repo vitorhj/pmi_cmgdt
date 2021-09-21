@@ -89,7 +89,7 @@ folium_static(m, width=1150, height=400)
 #Tabela com deliberações
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 st.dataframe(deliberacoes_cmgdt)
-deliberacoes=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
+lista_prot=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 st.text(deliberacoes)
 
 ##Sidebar e filtros
