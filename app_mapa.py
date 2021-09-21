@@ -89,7 +89,7 @@ folium_static(m, width=1150, height=400)
 
 #Tabela com deliberações
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
-st.dataframe(deliberacoes_cmgdt.head())
+st.dataframe(deliberacoes_cmgdt)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
