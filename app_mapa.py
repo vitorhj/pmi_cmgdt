@@ -17,10 +17,6 @@ ultima_linha=len(nova_tabela)
 ##Limpa valores de latitude e longitude em branco do mapa (estava dando erro!)
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
-cmgdt=pd.read_csv('CMGDT.csv', sep=';')
-deliberacoes=cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
-st.text(deliberacoes)
-
 ultima_linha = len(nova_tabela)
 
 from shapely import wkt
@@ -93,6 +89,8 @@ folium_static(m, width=1150, height=400)
 #Tabela com deliberações
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 st.dataframe(deliberacoes_cmgdt)
+deliberacoes=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
+st.text(deliberacoes)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
