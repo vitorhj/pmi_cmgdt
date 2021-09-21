@@ -41,13 +41,13 @@ m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositr
 
 #Insere a geometria de todos os lotes da cidade
 
-# folium.Choropleth(
-    # geo_data=todos_lotes.head(10000),
-    # name="choropleth",
-    # fill_color='black',
-    # fill_opacity=0.0,
-    # line_opacity=0.1,
-# ).add_to(m)
+folium.Choropleth(
+    geo_data=todos_lotes.head(10000),
+    name="choropleth",
+    fill_color='black',
+    fill_opacity=0.0,
+    line_opacity=0.1,
+).add_to(m)
 
 ## Insere markers com as informções das empresas que foram para conselho
 
@@ -93,7 +93,6 @@ st.dataframe(deliberacoes_cmgdt)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
-lista_prot = ('','op1','op2','op3')
 prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
 ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
