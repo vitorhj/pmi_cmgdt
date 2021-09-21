@@ -10,6 +10,9 @@ import geopandas as gpd
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
 
+deliberacoes = pd.read_csv('./dados/Deliberações CMGDT.csv')
+st.dataframe(deliberacoes.head())
+
 nova_tabela=pd.read_csv('nova_tabela.csv')
 latlong =pd.read_csv('viewplantacadastral_pontos.csv')
 
