@@ -1,8 +1,14 @@
+#______________________________________________________________________________________________________________________________________________________
+##IMPORTAÇÃO DOS PACOTES
+
 import streamlit as st
 from streamlit_folium import folium_static
 import folium
 import pandas as pd
 import geopandas as gpd
+
+#______________________________________________________________________________________________________________________________________________________
+##ESTRUTURA DA PÁGINA
 
 st.set_page_config(layout="wide")
 
