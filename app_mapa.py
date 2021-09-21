@@ -10,7 +10,7 @@ import geopandas as gpd
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
 
-deliberacoes = pd.read_csv(r'./dados/Deliberações CMGDT.csv')
+deliberacoes = pd.read_csv(r'./dados/CMGDT.csv')
 st.dataframe(deliberacoes.head())
 
 nova_tabela=pd.read_csv('nova_tabela.csv')
