@@ -1,24 +1,49 @@
-
 #______________________________________________________________________________________________________________________
 
-## IMPORTA BIBLIOTECAS PARA O PYTHON
+## IMPORTAÇÃO DE BIBLIOTECAS PARA O PYTHON
 
 import pandas as pd
 import os
-#import folium
+import folium
 import re
 #import geopandas as gpd
 import streamlit as st
-
+import streamlit as st
+from streamlit_folium import folium_static
+import folium
 
 #_____________________________________________________________________________________________________________________
 
 ##ESTRUTURA PAGINA
 
-st.text('teste 1234')
-import pandas as pd
-tabela_deliberacoes = pd.read_csv('Deliberações CMGDT.csv')
-st.DataFrame(tabela_deliberacoes)
+
+##Título acima do mapa
+st.title('Mapa de deliberações do CMGDT')
+
+##Sidebar e filtros
+st.sidebar.subheader('Filtros:')
+lista_prot = ('','op1','op2','op3')
+prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
+ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
+
+# center on Liberty Bell
+m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
+
+# add marker for Liberty Bell
+tooltip = "Teste1"
+folium.Marker(
+    [-26.9038,-48.6821], popup="Teste2", tooltip=tooltip, icon=folium.Icon(color="black")
+).add_to(m)
+
+# call to render Folium map in Streamlit
+folium_static(m, width=750, height=550) #Tamanho do mapa
+m.add_child(folium_static.LayerControl()) #Camadas do mapa
+    
+#import pandas as pd
+#tabela_deliberacoes = pd.read_csv('Deliberações CMGDT.csv')
+#tabela_deliberacoes.head()
+
 #import pandas as pd
 #latlong =pd.read_csv(os.path.join(folder,'plantacadastral','viewplantacadastral_pontos.csv'))
 #latlong.head()
