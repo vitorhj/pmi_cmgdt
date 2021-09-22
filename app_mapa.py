@@ -40,6 +40,23 @@ lista_logradouro=nova_tabela['nomevia'].unique().tolist()
 lista_logradouro.insert(0,'')
 
 #______________________________________________________________________________________________________________________________________________________
+##INPUTS DA PÁGINA DO STREAMLIT
+
+##Padrão de visualização da página
+st.set_page_config(layout="wide")
+st.sidebar.image(logo_image, width=200)
+
+##Sidebar e filtros
+st.sidebar.subheader('Filtros:')
+cadastro_sidebar=st.sidebar.text_input('Cadastro: ', '')
+delib_sidebar = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
+prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
+logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
+ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
+#st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
+
+#______________________________________________________________________________________________________________________________________________________
 ##TRATAMENTO DOS DADOS E PLOTAGEM DO MAPA
 
 #Converte os dados da tabela em dados geoespaciais
@@ -98,21 +115,7 @@ m.add_child(folium.LayerControl())
 #m.save(outfile=os.path.join(folder,'map.html'))
 
 #______________________________________________________________________________________________________________________________________________________
-##ESTRUTURA DA PÁGINA
-
-##Padrão de visualização da página
-st.set_page_config(layout="wide")
-st.sidebar.image(logo_image, width=200)
-
-##Sidebar e filtros
-st.sidebar.subheader('Filtros:')
-cadastro_sidebar=st.sidebar.text_input('Cadastro: ', '')
-delib_sidebar = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
-prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
-razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
-logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
-ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
-#st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
+##ESTRUTURA DA PÁGINA (SIDEBAR NÃO PREENCHIDA)
 
 ##Título acima do mapa
 st.title('Mapa de deliberações do CMGDT')
