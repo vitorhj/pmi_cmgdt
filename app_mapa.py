@@ -57,8 +57,6 @@ ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_val
 
 ano1=ano_sidebar[0]
 ano2=ano_sidebar[1]
-st.text(ano1)
-st.text(ano2)
 
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 
@@ -89,9 +87,13 @@ if prot_sidebar != '':
 if razaosocial_sidebar != '':
     nova_tabela=nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar]
 
+#Filtro logradouro
+if razaosocial_sidebar != '':
+    nova_tabela=nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar]
+
 #Filtro pelo ano
-#if logradouro_sidebar != '':
-    #st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
+if logradouro_sidebar != '':
+    nova_tabela=nova_tabela[nova_tabela['nomevia']==logradouro_sidebar]
 
 #______________________________________________________________________________________________________________________________________________________
 ##TRATAMENTO DOS DADOS PARA GEOPANDAS
