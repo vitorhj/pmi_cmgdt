@@ -151,7 +151,7 @@ if cadastro_sidebar != '':
     
 
 #Filtro deliberação
-if delib_sidebar != ' ':
+if delib_sidebar != '':
     delib_filtro = delib_sidebar
     nova_tabela=nova_tabela[(delib==int(delib_filtro))]
     
