@@ -193,6 +193,7 @@ gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
 lotes_cmgdt = gdf['geometry']
 todos_lotes = gdf2['geometry']
 
-st.text('tabela com valores fitlrados pos conversão geopandas')
-st.dataframe(nova_tabela)
+if (cadastro_sidebar=='') | (delib_sidebar=='') | (prot_sidebar=='') | (razaosocial_sidebar=='') | (logradouro_sidebar==''):
+    st.text('cadastro ou deliberação preenchidos, abaixo tabela geopandas')
+    st.dataframe(nova_tabela)
 
