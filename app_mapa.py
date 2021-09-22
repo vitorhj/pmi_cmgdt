@@ -176,7 +176,6 @@ if razaosocial_sidebar != '':
 ##Tratamento dos dados Geopandas
 
 #Converte os dados da tabela em dados geoespaciais
-nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
 ultima_linha = len(nova_tabela)
 
