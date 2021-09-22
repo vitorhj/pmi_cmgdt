@@ -53,8 +53,8 @@ delib_sidebar = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
 prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
-ano1='2015'
-ano2='2025'
+ano1=2015
+ano2=2025
 ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_value=2025, value=(ano1,ano2), step=1)
 ano1=ano_sidebar[0]
 ano2=ano_sidebar[1]
