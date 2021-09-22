@@ -96,7 +96,7 @@ if logradouro_sidebar != '':
     nova_tabela=nova_tabela[nova_tabela['nomevia']==logradouro_sidebar]
 
 nova_tabela=nova_tabela[nova_tabela['ano']<=ano1]
-nova_tabela=nova_tabela[nova_tabela['ano']>=ano2]
+#nova_tabela=nova_tabela[nova_tabela['ano']>=ano2]
 
 #______________________________________________________________________________________________________________________________________________________
 ##TRATAMENTO DOS DADOS PARA GEOPANDAS
