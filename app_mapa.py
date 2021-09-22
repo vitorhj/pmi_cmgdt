@@ -12,7 +12,7 @@ import geopandas as gpd
 
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv', sep=',')
-nova_tabela2=tabela_deliberacoes.merge(latlong,how='left',left_on='inscricao_lotes', right_on='inscricao')
+nova_tabela2=tabela_deliberacoes.merge(latlong2,how='left',left_on='inscricao_lotes', right_on='inscricao')
 nova_tabela2=nova_tabela2[~nova_tabela2['latitude'].isna()].reset_index().copy()
 
 
