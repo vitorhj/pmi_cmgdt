@@ -100,6 +100,10 @@ m.add_child(folium.LayerControl())
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA
 
+##Padrão de visualização da página
+st.set_page_config(layout="wide")
+st.sidebar.image(logo_image, width=200)
+
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
 cadastro_sidebar=st.sidebar.text_input('Cadastro: ', '')
@@ -109,10 +113,6 @@ razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
 ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
-
-##Padrão de visualização da página
-st.set_page_config(layout="wide")
-st.sidebar.image(logo_image, width=200)
 
 ##Título acima do mapa
 st.title('Mapa de deliberações do CMGDT')
