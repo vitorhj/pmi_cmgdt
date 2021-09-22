@@ -26,8 +26,11 @@ nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 lista_del=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 lista_del.insert(0,' ')
 lista_prot=deliberacoes_cmgdt['PROTOCOLO'].unique().tolist()
+lsita_prot.insert(0,' ')
 lista_razaosocial=deliberacoes_cmgdt['RAZÃO SOCIAL'].unique().tolist()
+lista_razaosocial.insert(0,' ')
 lista_logradouro=nova_tabela['nomevia'].unique().tolist()
+lista_logradouro.insert(0,' ')
 
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
