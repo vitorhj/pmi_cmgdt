@@ -100,6 +100,16 @@ m.add_child(folium.LayerControl())
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA
 
+##Sidebar e filtros
+st.sidebar.subheader('Filtros:')
+cadastro_sidebar=st.sidebar.text_input('Cadastro: ', '')
+delib_sidebar = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
+prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
+logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
+ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
+#st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
+
 ##Padrão de visualização da página
 st.set_page_config(layout="wide")
 st.sidebar.image(logo_image, width=200)
@@ -111,18 +121,11 @@ st.title('Mapa de deliberações do CMGDT')
 folium_static(m, width=1420, height=400)
 
 #Tabela com deliberações
-
-st.dataframe(deliberacoes_cmgdt, width=1600)
-
-##Sidebar e filtros
-st.sidebar.subheader('Filtros:')
-cadastro_sidebar=st.sidebar.text_input('Cadastro: ', '')
-delib_sidebar = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
-prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
-razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
-logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
-ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
-#st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv') 
+if cadastro_sidebar==''|delib_sidebar==''|prot_sidebar==''|razaosocial_sidebar==''|razaosocial_sidebar==''|logradouro_sidebar==''
+    st.dataframe(deliberacoes_cmgdt, width=1600)
+else:
+    st.text('filtros preenchidos')
+ 
 st.text('_________________________________________________________________________________')
 
 #Rodapé da página
@@ -139,11 +142,6 @@ ano = nova_tabela['DATA']
 protocolo = nova_tabela['PROTOCOLO']
 rsocial = nova_tabela['RAZÃO SOCIAL']
 logradouro = nova_tabela['nomevia']
-
-
-st.write(type(delib_sidebar))
-st.write((delib_sidebar)==' ')
-st.write((delib_sidebar))
 
 #Filtro cadastro
 if cadastro_sidebar != '':
@@ -164,6 +162,9 @@ if razaosocial_sidebar != '':
 #Filtro pelo ano
 #if logradouro_sidebar != '':
     #st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
+    
+#______________________________________________________________________________________________________________________________________________________
+##ESTRUTURA DA PÁGINA FILTRADA
 
     
 st.dataframe(nova_tabela)
