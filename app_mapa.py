@@ -25,7 +25,7 @@ nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 lista_del=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 lista_prot=deliberacoes_cmgdt['PROTOCOLO'].unique().tolist()
 lista_razaosocial=deliberacoes_cmgdt['RAZÃO SOCIAL'].unique().tolist()
-lista_endereco=nova_tabela['nomevia'].unique().tolist()
+lista_logradouro=nova_tabela['nomevia'].unique().tolist()
 
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
@@ -114,6 +114,6 @@ st.text(lista_prot)
 st.sidebar.subheader('Filtros:')
 prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 razaosocial = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
-endereco = st.sidebar.selectbox('Razão Social:',lista_endereco)
+logradouro = st.sidebar.selectbox('Logradouro:',lista_logradouro)
 lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
 ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
