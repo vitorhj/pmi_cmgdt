@@ -142,7 +142,11 @@ logradouro_filtro = nova_tabela['nomevia']
 
 if cadastro_sidebar != '':
     cadastro_filtro = cadastro_sidebar
-    st.text(cadastro_filtro)
-else:
-    st.text(cadastro_filtro)
-
+if delib_sidebar != '':
+    delib_filtro = delib_sidebar
+if prot_sidebar != '':
+    prot_filtro = prot_sidebar
+if razaosocial_sidebar != '':
+    razaosocial_filtro = razaosocial_sidebar
+if logradouro_sidebar != '':
+    logradouro_filtro = logradouro_filtro
