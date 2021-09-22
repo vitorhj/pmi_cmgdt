@@ -6,6 +6,7 @@ from streamlit_folium import folium_static
 import folium
 import pandas as pd
 import geopandas as gpd
+from shapely import wkt
 
 #______________________________________________________________________________________________________________________________________________________
 ##DADOS DO REPOSITÓRIO
@@ -30,13 +31,11 @@ lista_logradouro=nova_tabela['nomevia'].unique().tolist()
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
 
-ultima_linha=len(nova_tabela)
 ##Limpa valores de latitude e longitude em branco do mapa (estava dando erro!)
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
 ultima_linha = len(nova_tabela)
 
-from shapely import wkt
 df=nova_tabela.copy()
 df2=latlong.copy()
 
@@ -58,11 +57,12 @@ m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositr
 #Insere a geometria de todos os lotes da cidade
 
 folium.Choropleth(
-    geo_data=todos_lotes.head(10000),
-    name="choropleth",
+    geo_data=lotes_cmgdt,
+    columnns=rsocial,
+    tooltip = prot,
     fill_color='black',
-    fill_opacity=0.0,
-    line_opacity=0.1,
+    fill_opacity=0.3,
+    line_opacity=0.5,
 ).add_to(m)
 
 ## Insere markers com as informções das empresas que foram para conselho
