@@ -169,3 +169,5 @@ if logradouro_sidebar != '':
     logradouro_filtro = logradouro_sidebar
 else:
     logradouro_filtro = logradouro
+    
+#nova_tabela=
