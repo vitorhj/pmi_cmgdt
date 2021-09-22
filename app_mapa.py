@@ -13,7 +13,7 @@ from PIL import Image
 ##DADOS
 
 #Logo Itajai
-logo_image = image.open('./dados/novo-pref-itajai.png')
+logo_image = ('./dados/logo.png')
 
 #Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
