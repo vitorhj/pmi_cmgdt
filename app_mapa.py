@@ -54,6 +54,12 @@ prot_sidebar = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
 ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_value=2025, value=(2018,2021), step=1)
+
+ano1=ano_sidebar[0]
+ano2=ano_sidebar[1]
+st.text(ano1)
+st.text(ano2)
+
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 
 #______________________________________________________________________________________________________________________________________________________
