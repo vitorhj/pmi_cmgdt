@@ -140,8 +140,8 @@ protocolo = nova_tabela['PROTOCOLO']
 rsocial = nova_tabela['RAZÃO SOCIAL']
 logradouro = nova_tabela['nomevia']
 
-st.write(cadastro_sidebar=='')
-st.dataframe(nova_tabela)
+
+
 
 #Filtro cadastro
 if cadastro_sidebar != '':
@@ -149,13 +149,13 @@ if cadastro_sidebar != '':
 #     nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))]
     st.dataframe(nova_tabela[nova_tabela['CADASTRO']==int(cadastro_sidebar)])
     
-st.dataframe(nova_tabela)
+
 #Filtro deliberação
 if delib_sidebar != ' ':
     delib_filtro = delib_sidebar
     nova_tabela=nova_tabela[(delib==int(delib_filtro))]
     
-st.dataframe(nova_tabela)
+
     
 #Filtro protocolo   
 if prot_sidebar != '':
