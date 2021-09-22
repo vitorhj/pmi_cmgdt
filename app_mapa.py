@@ -10,14 +10,21 @@ import geopandas as gpd
 #______________________________________________________________________________________________________________________________________________________
 ##IMPORTAÇÃO DOS DADOS
 
+#Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 latlong = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
+
+#Trata o número da inscrição para o padrão da tabela viewplantacadastral
 deliberacoes_cmgdt['inscricao_lotes']=deliberacoes_cmgdt['INSCRIÇÃO'].str[:15]
+
+#Junta as duas tabelas pelo número da inscrição
 nova_tabela=deliberacoes_cmgdt.merge(latlong,how='left',left_on='inscricao_lotes', right_on='inscricao')
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
-#nova_tabela=pd.read_csv('nova_tabela.csv')
-#latlong =pd.read_csv('viewplantacadastral_pontos.csv')
+#Valores únicos para o filtro da sidebar
+lista_del=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
+lista_prot=deliberacoes_cmgdt['PROTOCOLO'].unique().tolist()
+lista_razaosocial=deliberacoes_cmgdt['RAZÃO SOCIAL'].unique().tolist()
 
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
@@ -98,7 +105,7 @@ folium_static(m, width=1150, height=400)
 #Tabela com deliberações
 
 st.dataframe(deliberacoes_cmgdt)
-lista_prot=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
+
 st.text(lista_prot)
 
 ##Sidebar e filtros
