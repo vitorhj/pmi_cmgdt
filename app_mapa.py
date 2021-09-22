@@ -31,13 +31,13 @@ nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
 #Filtra por valores únicos para o filtro da sidebar
 lista_del=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
-lista_del.insert(0,' ')
+lista_del.insert(0,'')
 lista_prot=deliberacoes_cmgdt['PROTOCOLO'].unique().tolist()
-lista_prot.insert(0,' ')
+lista_prot.insert(0,'')
 lista_razaosocial=deliberacoes_cmgdt['RAZÃO SOCIAL'].unique().tolist()
-lista_razaosocial.insert(0,' ')
+lista_razaosocial.insert(0,'')
 lista_logradouro=nova_tabela['nomevia'].unique().tolist()
-lista_logradouro.insert(0,' ')
+lista_logradouro.insert(0,'')
 
 #______________________________________________________________________________________________________________________________________________________
 ##TRATAMENTO DOS DADOS E PLOTAGEM DO MAPA
@@ -149,7 +149,6 @@ st.write((delib_sidebar))
 if cadastro_sidebar != '':
     st.dataframe(nova_tabela[nova_tabela['CADASTRO']==int(cadastro_sidebar)])
     
-
 #Filtro deliberação
 if delib_sidebar != ' ':
     st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar])
