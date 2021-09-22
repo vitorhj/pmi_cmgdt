@@ -153,24 +153,17 @@ if cadastro_sidebar != '':
 if delib_sidebar != '':
     st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar])
     
-
-    
 #Filtro protocolo   
 if prot_sidebar != '':
-    prot_filtro = prot_sidebar
-else:
-    prot_fitlro = prot
+    st.dataframe(nova_tabela[nova_tabela['PROTOCOLO']==prot_sidebar])
 
 #Filtro razão social
 if razaosocial_sidebar != '':
-    razaosocial_filtro = razaosocial_sidebar
-else:
-    razaosocial_filtro = rsocial
+    st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
 
 #Filtro pelo ano
-if logradouro_sidebar != '':
-    logradouro_filtro = logradouro_sidebar
-else:
-    logradouro_filtro = logradouro
+#if logradouro_sidebar != '':
+    #st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
+
     
 st.dataframe(nova_tabela)
