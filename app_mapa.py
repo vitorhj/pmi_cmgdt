@@ -170,5 +170,5 @@ if logradouro_sidebar != '':
 else:
     logradouro_filtro = logradouro
     
-nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))&(deliberacao==delib_filtro)]
+nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))&(deliberacao==int(delib_filtro))]
 st.dataframe(nova_tabela)
