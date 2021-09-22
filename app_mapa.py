@@ -59,6 +59,7 @@ ano1=ano_sidebar[0]
 ano2=ano_sidebar[1]
 
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
+st.sidebar.button('limpar')
 
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
@@ -173,8 +174,6 @@ st.dataframe(nova_tabela)
 
  
 st.text('_________________________________________________________________________________')
-
-st.button('teste')
 
 #Rodapé da página
 st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
