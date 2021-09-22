@@ -11,17 +11,13 @@ import geopandas as gpd
 ##IMPORTAÇÃO DOS DADOS
 
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
-latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
-st.dataframe(deliberacoes_cmgdt)
-st.dataframe(latlong2)
+latlong = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
 deliberacoes_cmgdt['inscricao_lotes']=deliberacoes_cmgdt['INSCRIÇÃO'].str[:15]
-nova_tabela2=deliberacoes_cmgdt.merge(latlong2,how='left',left_on='inscricao_lotes', right_on='inscricao')
-nova_tabela2=nova_tabela2[~nova_tabela2['latitude'].isna()].reset_index().copy()
-st.dataframe(nova_tabela2)
+nova_tabela=deliberacoes_cmgdt.merge(latlong2,how='left',left_on='inscricao_lotes', right_on='inscricao')
+nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
-
-nova_tabela=pd.read_csv('nova_tabela.csv')
-latlong =pd.read_csv('viewplantacadastral_pontos.csv')
+#nova_tabela=pd.read_csv('nova_tabela.csv')
+#latlong =pd.read_csv('viewplantacadastral_pontos.csv')
 
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
