@@ -60,7 +60,7 @@ folium.Choropleth(
     geo_data=lotes_cmgdt,
     fill_color='black',
     fill_opacity=0.3,
-    line_opacity=0.5,
+    line_opacity=1,
 ).add_to(m)
 
 ## Insere markers com as informções das empresas que foram para conselho
