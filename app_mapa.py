@@ -12,6 +12,10 @@ import geopandas as gpd
 
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv', sep=',')
+nova_tabela2=tabela_deliberacoes.merge(latlong,how='left',left_on='inscricao_lotes', right_on='inscricao')
+nova_tabela2=nova_tabela2[~nova_tabela2['latitude'].isna()].reset_index().copy()
+
+
 nova_tabela=pd.read_csv('nova_tabela.csv')
 latlong =pd.read_csv('viewplantacadastral_pontos.csv')
 
@@ -94,7 +98,8 @@ folium_static(m, width=1150, height=400)
 #Tabela com deliberações
 
 st.dataframe(deliberacoes_cmgdt)
-st.table(latlong2)
+st.dataframe(nova_tabela2).head()
+st.dataframe(latlong2)
 lista_prot=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 st.text(lista_prot)
 
