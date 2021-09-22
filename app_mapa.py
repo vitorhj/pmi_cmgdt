@@ -129,8 +129,8 @@ st.text('Última atualização dos dados: 22/09/2021')
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
 
-if cadastro_sidebar != ''
+if cadastro_sidebar != '':
     st.text('cadastro preenchido')
-else
+else:
     st.text('cadastro em branco')
 
