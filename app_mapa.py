@@ -193,5 +193,6 @@ gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
 lotes_cmgdt = gdf['geometry']
 todos_lotes = gdf2['geometry']
 
+st.text('tabela com valores fitlrados pos conversão geopandas')
 st.dataframe(nova_tabela)
 
