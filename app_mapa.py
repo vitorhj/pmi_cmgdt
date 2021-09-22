@@ -105,7 +105,7 @@ st.sidebar.image(logo_image, width=200)
 st.title('Mapa de deliberações do CMGDT')
 
 ##Mapa com as deliberações CMGDT
-folium_static(m, width=1600, height=400)
+folium_static(m, width=1500, height=400)
 
 #Tabela com deliberações
 
