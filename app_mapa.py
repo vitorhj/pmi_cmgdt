@@ -58,8 +58,6 @@ m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositr
 
 folium.Choropleth(
     geo_data=lotes_cmgdt,
-    columnns=rsocial,
-    tooltip = prot,
     fill_color='black',
     fill_opacity=0.3,
     line_opacity=0.5,
