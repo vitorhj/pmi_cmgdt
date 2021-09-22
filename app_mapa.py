@@ -108,6 +108,7 @@ st.dataframe(deliberacoes_cmgdt)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
+delib = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
 prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 razaosocial = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro = st.sidebar.selectbox('Logradouro:',lista_logradouro)
