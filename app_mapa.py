@@ -145,15 +145,12 @@ logradouro = nova_tabela['nomevia']
 
 #Filtro cadastro
 if cadastro_sidebar != '':
-#     cadastro_filtro = cadastro_sidebar
-#     nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))]
     st.dataframe(nova_tabela[nova_tabela['CADASTRO']==int(cadastro_sidebar)])
     
 
 #Filtro deliberação
 if delib_sidebar != '':
-    delib_filtro = delib_sidebar
-    nova_tabela=nova_tabela[(delib==int(delib_filtro))]
+    st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==int(delib_sidebar)])
     
 
     
