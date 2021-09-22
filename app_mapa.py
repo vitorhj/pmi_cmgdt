@@ -134,7 +134,7 @@ st.text('Última atualização dos dados: 22/09/2021')
 
 #Colunas da nova tabela
 cadastro = nova_tabela['CADASTRO']
-deliberacao = nova_tabela['Nº DELIBERAÇÃO']
+delib = nova_tabela['Nº DELIBERAÇÃO']
 ano = nova_tabela['DATA']
 protocolo = nova_tabela['PROTOCOLO']
 rsocial = nova_tabela['RAZÃO SOCIAL']
