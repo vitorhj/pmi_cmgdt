@@ -8,7 +8,7 @@ import pandas as pd
 import geopandas as gpd
 
 #______________________________________________________________________________________________________________________________________________________
-##IMPORTAÇÃO DOS DADOS
+##DADOS DO REPOSITÓRIO
 
 #Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
@@ -21,10 +21,11 @@ deliberacoes_cmgdt['inscricao_lotes']=deliberacoes_cmgdt['INSCRIÇÃO'].str[:15]
 nova_tabela=deliberacoes_cmgdt.merge(latlong,how='left',left_on='inscricao_lotes', right_on='inscricao')
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
-#Valores únicos para o filtro da sidebar
+#Filtra por valores únicos para o filtro da sidebar
 lista_del=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 lista_prot=deliberacoes_cmgdt['PROTOCOLO'].unique().tolist()
 lista_razaosocial=deliberacoes_cmgdt['RAZÃO SOCIAL'].unique().tolist()
+lista_endereco=deliberacoes_cmgdt['ENDEREÇO COMPLETO'].unique().tolist()
 
 #______________________________________________________________________________________________________________________________________________________
 ##CÓDIGO
@@ -111,5 +112,7 @@ st.text(lista_prot)
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
 prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
+razaosocial = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
+endereco = st.sidebar.selectbox('Razão Social:',lista_endereco)
 lista_ano=('','2015','2016','2017','2018','2019','2020','2021')
 ano = st.sidebar.selectbox('Ano da deliberação:',lista_ano)
