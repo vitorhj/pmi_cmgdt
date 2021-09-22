@@ -152,19 +152,19 @@ logradouro = nova_tabela['nomevia']
 
 #Filtro cadastro
 if cadastro_sidebar != '':
-    st.dataframe(nova_tabela[nova_tabela['CADASTRO']==int(cadastro_sidebar)])
+    nova_tabela=nova_tabela[nova_tabela['CADASTRO']==int(cadastro_sidebar)]
     
 #Filtro deliberação
 if delib_sidebar != '':
-    st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar])
+    nova_tabela=nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar]
     
 #Filtro protocolo   
 if prot_sidebar != '':
-    st.dataframe(nova_tabela[nova_tabela['PROTOCOLO']==prot_sidebar])
+    nova_tabela=nova_tabela[nova_tabela['PROTOCOLO']==prot_sidebar]
 
 #Filtro razão social
 if razaosocial_sidebar != '':
-    st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
+    nova_tabela=nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar]
 
 #Filtro pelo ano
 #if logradouro_sidebar != '':
