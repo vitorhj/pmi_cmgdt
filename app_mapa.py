@@ -10,6 +10,8 @@ import geopandas as gpd
 #______________________________________________________________________________________________________________________________________________________
 ##IMPORTAÇÃO DOS DADOS
 
+deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
+latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv', sep=';')
 nova_tabela=pd.read_csv('nova_tabela.csv')
 latlong =pd.read_csv('viewplantacadastral_pontos.csv')
 
@@ -90,8 +92,9 @@ st.title('Mapa de deliberações do CMGDT')
 folium_static(m, width=1150, height=400)
 
 #Tabela com deliberações
-deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
+
 st.dataframe(deliberacoes_cmgdt)
+st.dataframe(latlong2)
 lista_prot=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 st.text(lista_prot)
 
