@@ -22,6 +22,9 @@ latlong = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
 #Trata o número da inscrição para o padrão da tabela viewplantacadastral
 deliberacoes_cmgdt['inscricao_lotes']=deliberacoes_cmgdt['INSCRIÇÃO'].str[:15]
 
+#Trata o ano das deliberações
+deliberacoes_cmgdt['ano']=deliberacoes_cmgdt.str[6:11]
+
 #Junta as duas tabelas pelo número da inscrição
 nova_tabela=deliberacoes_cmgdt.merge(latlong,how='left',left_on='inscricao_lotes', right_on='inscricao')
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
