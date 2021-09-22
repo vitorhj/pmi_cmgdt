@@ -57,7 +57,7 @@ ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_val
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 
 #______________________________________________________________________________________________________________________________________________________
-##TRATAMENTO DOS DADOS GEOPANDAS
+##TRATAMENTO DOS DADOS PARA GEOPANDAS
 
 #Converte os dados da tabela em dados geoespaciais
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
@@ -171,7 +171,7 @@ if razaosocial_sidebar != '':
     #st.dataframe(nova_tabela[nova_tabela['RAZÃO SOCIAL']==razaosocial_sidebar])
     
 #______________________________________________________________________________________________________________________________________________________
-##ESTRUTURA DA PÁGINA FILTRADA
+##ESTRUTURA DA PÁGINA FILTRADA E PLOTAGEM DOS MAPAS E TABELAS COM FITLRO
 
 ##Tratamento dos dados Geopandas
 
@@ -193,7 +193,42 @@ gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
 lotes_cmgdt = gdf['geometry']
 todos_lotes = gdf2['geometry']
 
+m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
+
+#MAPAS FILTRADOS
+
+##Insere a geometria dos lotes das empresas aprovadas pelo conselho:
 if (cadastro_sidebar!='') | (delib_sidebar!='') | (prot_sidebar!='') | (razaosocial_sidebar!='') | (logradouro_sidebar!=''):
-    st.text('cadastro ou deliberação preenchidos, abaixo tabela geopandas')
+    folium.Choropleth(
+        geo_data=lotes_cmgdt,
+        fill_color='black',
+        fill_opacity=0.3,
+        line_opacity=1,
+    ).add_to(m)
+
+    ## Insere markers com as informções das empresas que foram para conselho
+
+    ultima_linha = len(nova_tabela)
+
+    for i in range(ultima_linha):
+      lat = nova_tabela.iloc[i]['latitude']
+      lon = nova_tabela.iloc[i]['longitude']
+      rsocial = nova_tabela.loc[i]['RAZÃO SOCIAL']
+      prot = nova_tabela.loc[i]['PROTOCOLO']
+      data = nova_tabela.loc[i]['DATA']
+      ndeliberacao = nova_tabela.loc[i]['Nº DELIBERAÇÃO']
+      cadastro = nova_tabela.loc[i]['CADASTRO']
+      endereco = nova_tabela.loc[i]['ENDEREÇO COMPLETO']
+      deliberacao = nova_tabela.loc[i]['DELIBERAÇÃO']
+
+      folium.Marker(
+          location=[lon,lat],
+          popup = 'Protocolo: '+prot+' , Nº Deliberação: '+str(ndeliberacao)+' , Data deliberação: '+str(data)+' , Razão Social: '+rsocial+' , Nº cadastro: '+str(cadastro)+ ', Endereço: '+str(endereco),
+          tooltip = 'Protocolo: '+prot+', Razão Social: '+rsocial,
+          icon=folium.Icon(color="black")
+      ).add_to(m)
+
+    m.add_child(folium.LayerControl())
+
     st.dataframe(nova_tabela)
 
