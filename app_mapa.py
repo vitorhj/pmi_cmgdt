@@ -7,6 +7,7 @@ import folium
 import pandas as pd
 import geopandas as gpd
 from shapely import wkt
+from PIL import image
 
 #______________________________________________________________________________________________________________________________________________________
 ##DADOS
