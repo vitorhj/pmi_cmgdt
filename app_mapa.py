@@ -13,7 +13,7 @@ from PIL import Image
 ##DADOS
 
 #Logo Itajai
-logo = image.open('./dados/novo-pref-itajai.png')
+logo_image = image.open('./dados/novo-pref-itajai.png')
 
 #Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
@@ -99,7 +99,7 @@ m.add_child(folium.LayerControl())
 
 ##Padrão de visualização da página
 st.set_page_config(layout="wide")
-st.image(logo)
+st.image(logo_image, caption='Sunrise by the mountains')
 
 ##Título acima do mapa
 st.title('Mapa de deliberações do CMGDT')
