@@ -99,7 +99,7 @@ m.add_child(folium.LayerControl())
 
 ##Padrão de visualização da página
 st.set_page_config(layout="wide")
-st.image(logo_image, caption='Sunrise by the mountains')
+st.image(logo_image, width=10,caption='Sunrise by the mountains')
 
 ##Título acima do mapa
 st.title('Mapa de deliberações do CMGDT')
