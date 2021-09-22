@@ -106,9 +106,6 @@ folium_static(m, width=1150, height=400)
 #Tabela com deliberações
 
 st.dataframe(deliberacoes_cmgdt)
-st.dataframe(nova_tabela)
-
-st.text(lista_prot)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
