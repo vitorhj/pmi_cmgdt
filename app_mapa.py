@@ -95,7 +95,7 @@ if razaosocial_sidebar != '':
 if logradouro_sidebar != '':
     nova_tabela=nova_tabela[nova_tabela['nomevia']==logradouro_sidebar]
 
-nova_tabela=nova_tabela[nova_tabela['ano']<=ano1]
+#nova_tabela=nova_tabela[nova_tabela['ano']<=ano1]
 #nova_tabela=nova_tabela[nova_tabela['ano']>=ano2]
 
 #______________________________________________________________________________________________________________________________________________________
