@@ -151,7 +151,7 @@ if cadastro_sidebar != '':
     
 
 #Filtro deliberação
-if delib_sidebar != '':
+if delib_sidebar != ' ':
     st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar])
     
 
