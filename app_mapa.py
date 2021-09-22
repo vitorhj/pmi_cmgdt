@@ -103,7 +103,7 @@ st.set_page_config(layout="wide")
 st.title('Mapa de deliberações do CMGDT')
 
 ##Mapa com as deliberações CMGDT
-folium_static(m, width=1155, height=400)
+folium_static(m, width=1160, height=400)
 
 #Tabela com deliberações
 
