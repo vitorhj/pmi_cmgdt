@@ -93,7 +93,7 @@ folium_static(m, width=1150, height=400)
 
 #Tabela com deliberações
 
-st.dataframe(deliberacoes_cmgdt)
+st.markdown(st.dataframe(deliberacoes_cmgdt))
 st.dataframe(latlong2)
 lista_prot=deliberacoes_cmgdt['Nº DELIBERAÇÃO'].unique().tolist()
 st.text(lista_prot)
