@@ -11,6 +11,9 @@ from shapely import wkt
 #______________________________________________________________________________________________________________________________________________________
 ##DADOS
 
+#Logo Itajai
+logo = image.open('./dados/novo-pref-itajai.png')
+
 #Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
 latlong = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
@@ -95,6 +98,7 @@ m.add_child(folium.LayerControl())
 
 ##Padrão de visualização da página
 st.set_page_config(layout="wide")
+st.image(logo)
 
 ##Título acima do mapa
 st.title('Mapa de deliberações do CMGDT')
