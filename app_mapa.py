@@ -8,10 +8,13 @@ import pandas as pd
 import geopandas as gpd
 
 #______________________________________________________________________________________________________________________________________________________
-##CÓDIGO
+##IMPORTAÇÃO DOS DADOS
 
 nova_tabela=pd.read_csv('nova_tabela.csv')
 latlong =pd.read_csv('viewplantacadastral_pontos.csv')
+
+#______________________________________________________________________________________________________________________________________________________
+##CÓDIGO
 
 ultima_linha=len(nova_tabela)
 ##Limpa valores de latitude e longitude em branco do mapa (estava dando erro!)
