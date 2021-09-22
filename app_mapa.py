@@ -9,7 +9,7 @@ import geopandas as gpd
 from shapely import wkt
 
 #______________________________________________________________________________________________________________________________________________________
-##DADOS DO REPOSITÓRIO
+##DADOS
 
 #Tabelas de deliberações e dados geoespaciais
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
@@ -33,13 +33,14 @@ lista_logradouro=nova_tabela['nomevia'].unique().tolist()
 lista_logradouro.insert(0,' ')
 
 #______________________________________________________________________________________________________________________________________________________
-##CÓDIGO
+##TRATAMENTO DOS DADOS E PLOTAGEM DO MAPA
 
-##Limpa valores de latitude e longitude em branco do mapa (estava dando erro!)
+#Converte os dados da tabela em dados geoespaciais
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
 
 ultima_linha = len(nova_tabela)
 
+#Nova variável para cada tabela
 df=nova_tabela.copy()
 df2=latlong.copy()
 
@@ -55,10 +56,7 @@ todos_lotes = gdf2['geometry']
 
 m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
 
-##Insere a geometria dos lotes da localização das empresas aprovadas pelo conselho
-
-
-#Insere a geometria de todos os lotes da cidade
+##Insere a geometria dos lotes das empresas aprovadas pelo conselho:
 
 folium.Choropleth(
     geo_data=lotes_cmgdt,
@@ -91,7 +89,6 @@ for i in range(ultima_linha):
 
 m.add_child(folium.LayerControl())
 #m.save(outfile=os.path.join(folder,'map.html'))
-
 
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA
