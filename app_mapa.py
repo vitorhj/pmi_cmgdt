@@ -142,6 +142,7 @@ logradouro = nova_tabela['nomevia']
 
 
 st.write(type(delib_sidebar))
+st.write((delib_sidebar)=='')
 
 #Filtro cadastro
 if cadastro_sidebar != '':
@@ -150,7 +151,7 @@ if cadastro_sidebar != '':
 
 #Filtro deliberação
 if delib_sidebar != '':
-    st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==int(delib_sidebar)])
+    st.dataframe(nova_tabela[nova_tabela['Nº DELIBERAÇÃO']==delib_sidebar])
     
 
     
