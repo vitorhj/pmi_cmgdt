@@ -143,6 +143,7 @@ logradouro = nova_tabela['nomevia']
 
 st.write(type(delib_sidebar))
 st.write((delib_sidebar)=='')
+st.write((delib_sidebar))
 
 #Filtro cadastro
 if cadastro_sidebar != '':
