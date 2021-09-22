@@ -121,10 +121,7 @@ st.title('Mapa de deliberações do CMGDT')
 folium_static(m, width=1420, height=400)
 
 #Tabela com deliberações
-if cadastro_sidebar=='':
-    st.dataframe(deliberacoes_cmgdt, width=1600)
-else:
-    st.dataframe(deliberacoes_cmgdt, width=600)
+st.dataframe(deliberacoes_cmgdt, width=1600)
  
 st.text('_________________________________________________________________________________')
 
