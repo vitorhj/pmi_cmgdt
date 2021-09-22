@@ -143,14 +143,12 @@ logradouro = nova_tabela['nomevia']
 #Filtro cadastro
 if cadastro_sidebar != '':
     cadastro_filtro = cadastro_sidebar
-else:
-    cadastro_filtro = cadastro
+    nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))]
 
 #Filtro deliberação
 if delib_sidebar != '':
     delib_filtro = delib_sidebar
-else:
-    delib_filtro = delib
+    nova_tabela=nova_tabela[(delib==int(delib_filtro))]
     
 #Filtro protocolo   
 if prot_sidebar != '':
@@ -170,6 +168,4 @@ if logradouro_sidebar != '':
 else:
     logradouro_filtro = logradouro
     
-nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))]
-nova_tabela=nova_tabela[(delib==int(delib_filtro))]
 st.dataframe(nova_tabela)
