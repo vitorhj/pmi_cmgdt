@@ -142,6 +142,7 @@ logradouro_filtro = nova_tabela['nomevia']
 
 if cadastro_sidebar != '':
     cadastro_filtro = cadastro_sidebar
+    st.text(cadastro_filtro)
 else:
     st.text(cadastro_filtro)
 
