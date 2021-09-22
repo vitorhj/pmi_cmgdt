@@ -133,20 +133,39 @@ st.text('Última atualização dos dados: 22/09/2021')
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
 
 #Colunas da nova tabela
-cadastro_filtro = nova_tabela['CADASTRO']
-deliberacao_filtro = nova_tabela['Nº DELIBERAÇÃO']
-ano_filtro = nova_tabela['DATA']
-protocolo_fitlro = nova_tabela['PROTOCOLO']
-rsocial_filtro = nova_tabela['RAZÃO SOCIAL']
-logradouro_filtro = nova_tabela['nomevia']
+cadastro = nova_tabela['CADASTRO']
+deliberacao = nova_tabela['Nº DELIBERAÇÃO']
+ano = nova_tabela['DATA']
+protocolo = nova_tabela['PROTOCOLO']
+rsocial = nova_tabela['RAZÃO SOCIAL']
+logradouro = nova_tabela['nomevia']
 
+#Filtro cadastro
 if cadastro_sidebar != '':
     cadastro_filtro = cadastro_sidebar
+else:
+    cadastro_filtro = cadastro
+
+#Filtro deliberação
 if delib_sidebar != '':
     delib_filtro = delib_sidebar
+else:
+    delib_filtro = delib
+    
+#Filtro protocolo   
 if prot_sidebar != '':
     prot_filtro = prot_sidebar
+else:
+    prot_fitlro = prot
+
+#Filtro razão social
 if razaosocial_sidebar != '':
     razaosocial_filtro = razaosocial_sidebar
+else:
+    razaosocial_filtro = rsocial
+
+#Filtro pelo ano
 if logradouro_sidebar != '':
     logradouro_filtro = logradouro_filtro
+else:
+    logradouro_filtro = logradouro
