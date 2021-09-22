@@ -174,6 +174,8 @@ st.dataframe(nova_tabela)
  
 st.text('_________________________________________________________________________________')
 
+st.button('teste')
+
 #Rodapé da página
 st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
 st.text('Última atualização dos dados: 22/09/2021')
