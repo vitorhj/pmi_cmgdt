@@ -55,7 +55,7 @@ razaosocial_sidebar = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro_sidebar = st.sidebar.selectbox('Logradouro:',lista_logradouro)
 ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_value=2025, value=(2020,2021), step=1)
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
-st.write(ano_sidebar[0])
+st.write(ano_sidebar[1])
 
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
