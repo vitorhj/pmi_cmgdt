@@ -141,7 +141,7 @@ rsocial = nova_tabela['RAZÃO SOCIAL']
 logradouro = nova_tabela['nomevia']
 
 
-
+st.write(type(delib_sidebar))
 
 #Filtro cadastro
 if cadastro_sidebar != '':
