@@ -113,12 +113,12 @@ st.dataframe(deliberacoes_cmgdt, width=1600)
 
 ##Sidebar e filtros
 st.sidebar.subheader('Filtros:')
+cadastro_inputbox=st.sidebar.text_input('Cadastro: ', '')
 delib = st.sidebar.selectbox('Nº da Deliberação:',lista_del)
 prot = st.sidebar.selectbox('Nº do Protocolo:',lista_prot)
 razaosocial = st.sidebar.selectbox('Razão Social:',lista_razaosocial)
 logradouro = st.sidebar.selectbox('Logradouro:',lista_logradouro)
 ano = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030, value=2021, step=1)
-cadastro_inputbox=st.sidebar.text_input('Cadastro: ', '')
 st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv') 
 st.text('_________________________________________________________________________________')
 st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
