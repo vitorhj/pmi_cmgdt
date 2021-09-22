@@ -57,7 +57,7 @@ ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_val
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 
 #______________________________________________________________________________________________________________________________________________________
-##TRATAMENTO DOS DADOS E PLOTAGEM DO MAPA
+##TRATAMENTO DOS DADOS GEOPANDAS
 
 #Converte os dados da tabela em dados geoespaciais
 nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
@@ -77,6 +77,9 @@ gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
 
 lotes_cmgdt = gdf['geometry']
 todos_lotes = gdf2['geometry']
+
+#______________________________________________________________________________________________________________________________________________________
+##PLOTAGEM DO MAPA
 
 m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
 
@@ -170,5 +173,26 @@ if razaosocial_sidebar != '':
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA FILTRADA
 
-    
+##Tratamento dos dados Geopandas
+
+#Converte os dados da tabela em dados geoespaciais
+nova_tabela=nova_tabela[~nova_tabela['latitude'].isna()].reset_index().copy()
+
+ultima_linha = len(nova_tabela)
+
+#Nova variável para cada tabela
+df=nova_tabela.copy()
+df2=latlong.copy()
+
+df['geometry'] = df['geometry'].apply(wkt.loads)
+df2['geometry'] = df2['geometry'].apply(wkt.loads)
+
+gdf = gpd.GeoDataFrame(df, geometry='geometry', crs=4326)
+gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
+#gdf2.head()
+
+lotes_cmgdt = gdf['geometry']
+todos_lotes = gdf2['geometry']
+
 st.dataframe(nova_tabela)
+
