@@ -132,8 +132,16 @@ st.text('Última atualização dos dados: 22/09/2021')
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
 
+#Colunas da nova tabela
+cadastro_filtro = nova_tabela.['CADASTRO']
+deliberacao_filtro = nova_tabela.['Nº DELIBERAÇÃO']
+ano_filtro = nova_tabela.['DATA']
+protocolo_fitlro = nova_tabela.['PROTOCOLO']
+rsocial_filtro = nova_tabela.['RAZÃO SOCIAL']
+logradouro_filtro = nova_tabela.['nomevia']
+
 if cadastro_sidebar != '':
-    st.text('cadastro preenchido')
+    cadastro_filtro = cadastro_sidebar
 else:
-    st.text('cadastro em branco')
+    st.text(cadastro_filtro)
 
