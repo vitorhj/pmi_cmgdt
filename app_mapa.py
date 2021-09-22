@@ -11,7 +11,7 @@ import geopandas as gpd
 ##IMPORTAÇÃO DOS DADOS
 
 deliberacoes_cmgdt = pd.read_csv('./dados/CMGDT.csv', sep=';')
-latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv', sep=',')
+latlong2 = pd.read_csv('./dados/viewplantacadastral_pontos.csv')
 st.dataframe(deliberacoes_cmgdt).head()
 st.dataframe(latlong2).head()
 
