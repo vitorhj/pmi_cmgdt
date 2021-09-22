@@ -118,7 +118,8 @@ ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_val
 st.title('Mapa de deliberações do CMGDT')
 
 ##Mapa com as deliberações CMGDT
-folium_static(m, width=1420, height=400)
+if (cadastro_sidebar=='')&(delib_sidebar=='')&(prot_sidebar=='')&(razaosocial_sidebar=='')&(logradouro_sidebar==''):
+    folium_static(m, width=1420, height=400)
 
 #Tabela com deliberações
 if (cadastro_sidebar=='')&(delib_sidebar=='')&(prot_sidebar=='')&(razaosocial_sidebar=='')&(logradouro_sidebar==''):
