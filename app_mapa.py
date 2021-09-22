@@ -118,3 +118,4 @@ ano = st.sidebar.slider('Ano da deliberação:', min_value=2000, max_value=2030,
 #cadastro=st.sidebar.input('Cadastro: ', cadastro_inputbox)
 st.text('_________________________________________________________________________________')
 st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
+st.text('Última atualização dos dados: 22/09/2021')
