@@ -193,12 +193,12 @@ gdf2 = gpd.GeoDataFrame(df2, geometry='geometry', crs=4326)
 lotes_cmgdt = gdf['geometry']
 todos_lotes = gdf2['geometry']
 
-m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
-
 #MAPAS FILTRADOS
 
 ##Insere a geometria dos lotes das empresas aprovadas pelo conselho:
 if (cadastro_sidebar!='') | (delib_sidebar!='') | (prot_sidebar!='') | (razaosocial_sidebar!='') | (logradouro_sidebar!=''):
+    m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
+    
     folium.Choropleth(
         geo_data=lotes_cmgdt,
         fill_color='black',
