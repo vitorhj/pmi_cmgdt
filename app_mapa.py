@@ -140,15 +140,20 @@ protocolo = nova_tabela['PROTOCOLO']
 rsocial = nova_tabela['RAZÃO SOCIAL']
 logradouro = nova_tabela['nomevia']
 
+st.dataframe(nova_tabela)
+
 #Filtro cadastro
 if cadastro_sidebar != '':
     cadastro_filtro = cadastro_sidebar
     nova_tabela=nova_tabela[(cadastro==int(cadastro_filtro))]
-
+    
+st.dataframe(nova_tabela)
 #Filtro deliberação
 if delib_sidebar != '':
     delib_filtro = delib_sidebar
     nova_tabela=nova_tabela[(delib==int(delib_filtro))]
+    
+st.dataframe(nova_tabela)
     
 #Filtro protocolo   
 if prot_sidebar != '':
