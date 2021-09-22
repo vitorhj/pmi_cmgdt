@@ -140,6 +140,7 @@ protocolo = nova_tabela['PROTOCOLO']
 rsocial = nova_tabela['RAZÃO SOCIAL']
 logradouro = nova_tabela['nomevia']
 
+st.write(cadastro_sidebar)
 st.dataframe(nova_tabela)
 
 #Filtro cadastro
