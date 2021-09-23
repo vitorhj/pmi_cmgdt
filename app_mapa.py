@@ -6,6 +6,7 @@ from streamlit_folium import folium_static
 import folium
 import pandas as pd
 import geopandas as gpd
+import base64
 from shapely import wkt
 from PIL import Image
 
