@@ -174,7 +174,7 @@ m.add_child(folium.LayerControl())
 
 ##Título acima do mapa
 st.title('MAPA CMGDT')
-st.subheader('Mapa de deliberações do CMGDT de empresas com atividades permissíveis.')
+st.subheader('Mapa das deliberações do CMGDT de empresas com atividades permissíveis.')
 
 ##Mapa com as deliberações CMGDT
 folium_static(m, width=1420, height=400)
