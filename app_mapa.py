@@ -173,13 +173,14 @@ m.add_child(folium.LayerControl())
 ##ESTRUTURA DA PÁGINA 
 
 ##Título acima do mapa
-st.title('CMGDT')
+st.title('MAPA CMGDT')
 st.subheader('Mapa de deliberações do CMGDT de empresas com atividades permissíveis.')
 
 ##Mapa com as deliberações CMGDT
 folium_static(m, width=1420, height=400)
 
 #Tabela com deliberações
+st.subheader('Tabela com os dados das deliberações.')
 st.dataframe(nova_tabela)
 
  
