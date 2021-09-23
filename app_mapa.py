@@ -61,7 +61,7 @@ ano2=ano_sidebar[1]
 
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 botao = st.sidebar.button('limpar dados')
-
+st.write(botao)
 if botao:
     cadastro_sidebar=''
     delib_sidebar = ''
