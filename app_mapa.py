@@ -183,6 +183,15 @@ folium_static(m, width=1420, height=400)
 st.subheader('Tabela com os dados das deliberações.')
 st.dataframe(nova_tabela)
 
+#Download dos dados
+download=st.button('Download Excel File')
+ if download:
+  'Download Started!'
+  liste= ['A','B','C']
+  df_download= pd.DataFrame(liste)
+  df_download.columns=['Title']
+  df_download
+
  
 st.text('_________________________________________________________________________________')
 
