@@ -63,8 +63,8 @@ ano2=ano_sidebar[1]
 botao = st.sidebar.button('limpar dados')
 
 if botao:
-    cadastro_sidebar.clean()
-    delib_sidebar.clean()
+    cadastro_sidebar=''
+    delib_sidebar=''
     prot_sidebar =''
     prot_sidebar =''
     razaosocial_sidebar =''
