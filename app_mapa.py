@@ -188,7 +188,7 @@ try:
     #Tabela com deliberações
     st.subheader('Tabela com os dados das deliberações.')
     st.dataframe(nova_tabela)
-    st.dataframe(tabela_final)
+    #st.dataframe(tabela_final)
     
     #Download dos dados
     download=st.button('Download Excel File')
