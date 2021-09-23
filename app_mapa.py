@@ -171,7 +171,7 @@ m.add_child(folium.LayerControl())
 
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA 
-if error:
+try:
     ##Título acima do mapa
     st.title('MAPA CMGDT')
     st.subheader('Mapa das deliberações do CMGDT de empresas com atividades permissíveis.')
@@ -201,4 +201,5 @@ if error:
     #Rodapé da página
     st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
     st.text('Última atualização dos dados: 22/09/2021')
-pass
+except:
+    pass
