@@ -171,7 +171,7 @@ m.add_child(folium.LayerControl())
 
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA 
-if error
+if error:
     ##Título acima do mapa
     st.title('MAPA CMGDT')
     st.subheader('Mapa das deliberações do CMGDT de empresas com atividades permissíveis.')
