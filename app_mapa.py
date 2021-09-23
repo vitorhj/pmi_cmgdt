@@ -171,6 +171,11 @@ m.add_child(folium.LayerControl())
 #m.save(outfile=os.path.join(folder,'map.html'))
 
 #______________________________________________________________________________________________________________________________________________________
+##TABELA PARA PLOTAGEM
+
+tabela_final=[nova_tabela['nomevia'],nova_tabela['CADASTRO']]
+
+#______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA 
 try:
     ##Título acima do mapa
@@ -183,7 +188,8 @@ try:
     #Tabela com deliberações
     st.subheader('Tabela com os dados das deliberações.')
     st.dataframe(nova_tabela)
-
+    st.dataframe(tabela_final)
+    
     #Download dos dados
     download=st.button('Download Excel File')
     if download:
