@@ -60,7 +60,7 @@ ano1=ano_sidebar[0]
 ano2=ano_sidebar[1]
 
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
-botao = st.sidebar.button('limpar dados')
+botao = st.sidebar.button('limpar filtros')
 
 if botao:
     cadastro_sidebar=''
