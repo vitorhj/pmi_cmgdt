@@ -190,7 +190,6 @@ if download:
   liste= ['A','B','C']
   df_download= pd.DataFrame(liste)
   df_download.columns=['Title']
-  df_download
   csv = df_download.to_csv(index=False)
   b64 = base64.b64encode(csv.encode()).decode()  # some strings
   linko= f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">Download csv file</a>'
