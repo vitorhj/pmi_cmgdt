@@ -69,7 +69,6 @@ if botao:
     prot_sidebar =''
     razaosocial_sidebar =''
     logradouro_sidebar =''
-    ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_value=2025, value=(ano1,ano2), step=1)
 
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
