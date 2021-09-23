@@ -171,33 +171,34 @@ m.add_child(folium.LayerControl())
 
 #______________________________________________________________________________________________________________________________________________________
 ##ESTRUTURA DA PÁGINA 
+if error
+    ##Título acima do mapa
+    st.title('MAPA CMGDT')
+    st.subheader('Mapa das deliberações do CMGDT de empresas com atividades permissíveis.')
 
-##Título acima do mapa
-st.title('MAPA CMGDT')
-st.subheader('Mapa das deliberações do CMGDT de empresas com atividades permissíveis.')
+    ##Mapa com as deliberações CMGDT
+    folium_static(m, width=1420, height=400)
 
-##Mapa com as deliberações CMGDT
-folium_static(m, width=1420, height=400)
+    #Tabela com deliberações
+    st.subheader('Tabela com os dados das deliberações.')
+    st.dataframe(nova_tabela)
 
-#Tabela com deliberações
-st.subheader('Tabela com os dados das deliberações.')
-st.dataframe(nova_tabela)
+    #Download dos dados
+    download=st.button('Download Excel File')
+    if download:
+      'Download Started!'
+      liste= ['A','B','C']
+      df_download= pd.DataFrame(liste)
+      df_download.columns=['Title']
+      csv = df_download.to_csv(index=False)
+      b64 = base64.b64encode(csv.encode()).decode()  # some strings
+      linko= f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">Download csv file</a>'
+      st.markdown(linko, unsafe_allow_html=True)
 
-#Download dos dados
-download=st.button('Download Excel File')
-if download:
-  'Download Started!'
-  liste= ['A','B','C']
-  df_download= pd.DataFrame(liste)
-  df_download.columns=['Title']
-  csv = df_download.to_csv(index=False)
-  b64 = base64.b64encode(csv.encode()).decode()  # some strings
-  linko= f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">Download csv file</a>'
-  st.markdown(linko, unsafe_allow_html=True)
 
- 
-st.text('_________________________________________________________________________________')
+    st.text('_________________________________________________________________________________')
 
-#Rodapé da página
-st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
-st.text('Última atualização dos dados: 22/09/2021')
+    #Rodapé da página
+    st.text('Prefeitura Municipal de Itajaí - Secretaria de Desenvolvimento Urbano e Habitação')
+    st.text('Última atualização dos dados: 22/09/2021')
+pass
