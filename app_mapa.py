@@ -125,7 +125,7 @@ todos_lotes = gdf2['geometry']
 #______________________________________________________________________________________________________________________________________________________
 ##PLOTAGEM DO MAPA
 
-m = folium.Map(location=[-26.9038,-48.6821], zoom_start=14, tiles="cartodbpositron")
+m = folium.Map(location=[-26.9038,-48.6821], zoom_start=12, tiles="cartodbpositron")
 
 ##Insere a geometria dos lotes das empresas aprovadas pelo conselho:
 
