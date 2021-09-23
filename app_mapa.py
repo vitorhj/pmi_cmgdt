@@ -62,6 +62,15 @@ ano2=ano_sidebar[1]
 #st.download_button(label='Download', data = deliberacoes_cmgdt, filename='deliberacoes_cmgdt.csv',mime='csv')
 botao = st.sidebar.button('limpar dados')
 
+if botao:
+    cadastro_sidebar=''
+    delib_sidebar = ''
+    prot_sidebar =''
+    prot_sidebar =''
+    razaosocial_sidebar =''
+    logradouro_sidebar =''
+    ano_sidebar = st.sidebar.slider('Ano da deliberação:', min_value=2015, max_value=2025, value=(ano1,ano2), step=1)
+
 #______________________________________________________________________________________________________________________________________________________
 ##FILTRO DOS DADOS A PARTIR DA SIDEBAR
 
